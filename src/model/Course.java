@@ -1,6 +1,6 @@
 package model;
 
-public class Course {
+public class Course implements Identifiable {
 
     private final int courseId;
     private String courseName;
@@ -20,6 +20,11 @@ public class Course {
         this.courseName = courseName;
         this.credits = credits;
         this.courseId = nextCourseId++;
+    }
+
+    @Override
+    public int getId() {
+        return courseId;
     }
 
     private boolean isValidCourceName(String courseName) {

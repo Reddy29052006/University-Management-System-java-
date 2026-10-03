@@ -13,7 +13,8 @@ public class Main {
         while (true) {
             System.out.println("1. Enroll as Student");
             System.out.println("2. Enroll as Teacher");
-            System.out.println("3. Exit");
+            System.out.println("3. Add Course");
+            System.out.println("4. Exit");
 
             int choose = sc.nextInt();
             sc.nextLine();
@@ -36,8 +37,15 @@ public class Main {
                     int salary = Integer.parseInt(sc.nextLine());
                     university.addTeacher(name, age, salary);
                 }
-
                 case 3 -> {
+                    System.out.println("Enter course name:");
+                    String courseName = sc.nextLine().trim();
+                    System.out.println("Enter credits:");
+                    int credits = Integer.parseInt(sc.nextLine());
+                    university.addCourse(courseName, credits);
+                }
+
+                case 4 -> {
                     break menu;
                 }
                 default ->
